@@ -8,6 +8,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.center}>
         <Text style={{ color: 'white'}}>Is Tuner On: {isRunning ? 'ON' : 'OFF'}</Text>
+        <Text style={{color:'white'}}>batata</Text>
         <Text style={{ color: 'white'}}>Permission: {hasPermission ? 'Granted' : 'Not Granted'}</Text>
         <Text style={{ color: 'white'}}>{JSON.stringify(result, null, 2)}</Text>
     </View>
