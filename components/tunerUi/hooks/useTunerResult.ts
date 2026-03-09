@@ -1,9 +1,9 @@
-import { useEffect } from "react"
+import { useEffect } from 'react'
 import { useTuner } from 'tuner'
 
 
 
-export const useTunerInfo = () => {
+export const useTunerResult = () => {
     const { 
         isRunning,
         start, 
@@ -13,18 +13,19 @@ export const useTunerInfo = () => {
     } = useTuner()
 
     useEffect(() => {
-        if (!hasPermission) {
-            return
-        }
+        if (!hasPermission) return
+        
         start()
+        
         return () => {
             stop()
         }
     }, [hasPermission])
-
-    
+        
     return {
         isRunning,
+        start,
+        stop,
         hasPermission,
         result
     }
